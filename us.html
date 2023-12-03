@@ -63,7 +63,13 @@
           id="selectedLanguage"
         >
           <span class="text-white text-xs">English</span>
-          <img class="flag ms-1" height="25" width="30" src="Flag_of_Uk.png" alt="UK Flag" />
+          <img
+            class="flag ms-1"
+            height="25"
+            width="30"
+            src="Flag_of_Uk.png"
+            alt="UK Flag"
+          />
         </div>
         <div class="language-options" id="languageOptions">
           <a
@@ -71,7 +77,11 @@
             onclick="selectLanguage('en', 'https://cdn.freebiesupply.com/logos/large/2x/united-states-flag-logo-png-transparent.png', 'English')"
           >
             English
-            <img class="flag ml-1" src="https://cdn.freebiesupply.com/logos/large/2x/united-states-flag-logo-png-transparent.png" alt="UK Flag" />
+            <img
+              class="flag ml-1"
+              src="https://cdn.freebiesupply.com/logos/large/2x/united-states-flag-logo-png-transparent.png"
+              alt="UK Flag"
+            />
           </a>
           <a
             class="pointer text-xs"
@@ -88,30 +98,55 @@
       </div>
     </nav>
     <div class="d-flex justify-content-center w-100 my-5">
-      <div class="content rounded bg-white text-sm p-4" style="width: 80%;"></div>
+      <div
+        class="content rounded bg-white text-sm p-4"
+        style="width: 80%"
+      ></div>
     </div>
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-          var url = "https://baconipsum.com/api/?type=all-god&paras=2";
-          var contentDiv = document.querySelector(".content");
-      
-          // Display loading text while fetching
-          contentDiv.innerHTML = "Fetching...";
-      
-          fetch(url)
-            .then(function (response) {
-              return response.json();
-            })
-            .then(function (result) {
-              var joinedContent = result.join(" ");
-              contentDiv.innerHTML = joinedContent;
-            })
-            .catch(function (error) {
-              console.error(error);
-              contentDiv.innerHTML = "Error fetching data";
-            });
-        });
-      </script>
-      
+      document.addEventListener("DOMContentLoaded", function () {
+        var url = "https://baconipsum.com/api/?type=all-god&paras=2";
+        var contentDiv = document.querySelector(".content");
+
+        // Display loading text while fetching
+        contentDiv.innerHTML = "Fetching...";
+
+        fetch(url)
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (result) {
+            var joinedContent = result.join(" ");
+            contentDiv.innerHTML = joinedContent;
+          })
+          .catch(function (error) {
+            console.error(error);
+            contentDiv.innerHTML = "Error fetching data";
+          });
+      });
+
+      function toggleLanguageOptions() {
+        var options = document.getElementById("languageOptions");
+        options.style.display =
+          options.style.display === "block" ? "none" : "block";
+      }
+
+      function selectLanguage(langCode, flagSrc, langName) {
+        var selectedLanguage = document.getElementById("selectedLanguage");
+        var flagImage = selectedLanguage.querySelector(".flag");
+        var languageName = selectedLanguage.querySelector("span");
+
+        flagImage.src = flagSrc;
+        flagImage.alt = langName + " Flag";
+        languageName.textContent = langName;
+
+        console.log("Selected language: " + langCode);
+        toggleLanguageOptions();
+      }
+
+      function onHamburgerClick() {
+        console.log("Clicked hamburger");
+      }
+    </script>
   </body>
 </html>
