@@ -59,24 +59,24 @@
           id="selectedLanguage"
         >
           <span class="text-white text-xs">English</span>
-          <img class="flag ms-1" src="/Flag_of_Uk.png" alt="UK Flag" />
+          <img class="flag ms-1" src="https://seeklogo.com/images/U/united-kingdom-flag-logo-1088704B5E-seeklogo.com.png" alt="UK Flag" />
         </div>
         <div class="language-options" id="languageOptions">
           <a
             class="pointer text-xs"
-            onclick="selectLanguage('en', '/Flag_of_Uk.png', 'English')"
+            onclick="selectLanguage('en', 'https://seeklogo.com/images/U/united-kingdom-flag-logo-1088704B5E-seeklogo.com.png', 'English')"
           >
             English
-            <img class="flag ml-1" src="/Flag_of_Uk.png" alt="UK Flag" />
+            <img class="flag ml-1" src="https://seeklogo.com/images/U/united-kingdom-flag-logo-1088704B5E-seeklogo.com.png" alt="UK Flag" />
           </a>
           <a
             class="pointer text-xs"
-            onclick="selectLanguage('den', '/Flag_of_Denmark.svg.png', 'Norsk Bokmal')"
+            onclick="selectLanguage('den', 'https://seeklogo.com/images/N/Norway-logo-921A318D83-seeklogo.com.png', 'Norsk Bokmal')"
           >
             Norsk Bokmal
             <img
               class="flag ml-1"
-              src="/Flag_of_Denmark.svg.png"
+              src="https://seeklogo.com/images/N/Norway-logo-921A318D83-seeklogo.com.png"
               alt="France Flag"
             />
           </a>
@@ -90,25 +90,16 @@
           <span>Menu</span>
         </div>
         <div class="mt-3 text-sm">
-          <a
-           
-            class="text-decoration-none pointer px-2 py-1 link-with-icon"
-          >
+          <a class="text-decoration-none pointer px-2 py-1 link-with-icon">
             <i class="fa-solid fa-file-invoice text-primary"></i> Invoices
           </a>
-          <a
-            class="text-decoration-none pointer px-2 py-1 link-with-icon"
-          >
+          <a class="text-decoration-none pointer px-2 py-1 link-with-icon">
             <i class="fa-solid fa-user text-primary"></i> Customers
           </a>
-          <a
-            class="text-decoration-none pointer px-2 py-1 link-with-icon"
-          >
+          <a class="text-decoration-none pointer px-2 py-1 link-with-icon">
             <i class="fa-solid fa-thin fa-gear text-primary"></i>Business
           </a>
-          <a
-            class="text-decoration-none pointer px-2 py-1 link-with-icon"
-          >
+          <a class="text-decoration-none pointer px-2 py-1 link-with-icon">
             <i class="fa-solid fa-file-invoice text-primary"></i> Invoice
             Journal
           </a>
@@ -118,9 +109,7 @@
           >
             <i class="fa-solid fa-tag text-primary"></i> Price List
           </a>
-          <a
-            class="text-decoration-none pointer px-2 py-1 link-with-icon"
-          >
+          <a class="text-decoration-none pointer px-2 py-1 link-with-icon">
             <i class="fa-solid fa-file-invoice text-primary"></i> Multiple
             Invoicing
           </a>
@@ -133,25 +122,29 @@
             <!-- Search fields -->
             <div class="custom-search-container">
               <input
-                  class="custom-input"
-                  type="text"
-                  placeholder="Search Article no..."
+                class="custom-input"
+                type="text"
+                placeholder="Search Article no..."
               />
               <div class="custom-search-icon">
-                  <i class="custom-magnifying-glass fa-solid fa-magnifying-glass"></i>
+                <i
+                  class="custom-magnifying-glass fa-solid fa-magnifying-glass"
+                ></i>
               </div>
-          </div>
-          
-          <div class="custom-search-container mt-2">
-            <input
+            </div>
+
+            <div class="custom-search-container mt-2">
+              <input
                 class="custom-input"
                 type="text"
                 placeholder="Search Product..."
-            />
-            <div class="custom-search-icon">
-                <i class="custom-magnifying-glass fa-solid fa-magnifying-glass"></i>
+              />
+              <div class="custom-search-icon">
+                <i
+                  class="custom-magnifying-glass fa-solid fa-magnifying-glass"
+                ></i>
+              </div>
             </div>
-        </div>
           </div>
           <div
             class="col-sm-12 col-md-12 col-lg-6 mt-md-2 mb-lg-3 d-flex justify-content-end align-items-center"
@@ -204,9 +197,7 @@
                   <h6 class="table-data-cell">123123</h6>
                 </td>
                 <td>
-                  <h6 class="table-data-cell">
-                    This is product/serive name
-                  </h6>
+                  <h6 class="table-data-cell">This is product/serive name</h6>
                 </td>
                 <td>
                   <h6 class="table-data-cell">200</h6>
@@ -215,9 +206,7 @@
                 <td><h6 class="table-data-cell">200</h6></td>
                 <td><h6 class="table-data-cell">1200</h6></td>
                 <td>
-                  <h6 class="table-data-cell">
-                    This is product description
-                  </h6>
+                  <h6 class="table-data-cell">This is product description</h6>
                 </td>
               </tr>
             </tbody>
@@ -313,127 +302,127 @@
     </div>
     <script>
       function toggleLanguageOptions() {
-  var options = document.getElementById("languageOptions");
-  options.style.display = options.style.display === "block" ? "none" : "block";
-}
+        var options = document.getElementById("languageOptions");
+        options.style.display =
+          options.style.display === "block" ? "none" : "block";
+      }
 
-function selectLanguage(langCode, flagSrc, langName) {
-  var selectedLanguage = document.getElementById("selectedLanguage");
-  var flagImage = selectedLanguage.querySelector(".flag");
-  var languageName = selectedLanguage.querySelector("span");
+      function selectLanguage(langCode, flagSrc, langName) {
+        var selectedLanguage = document.getElementById("selectedLanguage");
+        var flagImage = selectedLanguage.querySelector(".flag");
+        var languageName = selectedLanguage.querySelector("span");
 
-  flagImage.src = flagSrc;
-  flagImage.alt = langName + " Flag";
-  languageName.textContent = langName;
+        flagImage.src = flagSrc;
+        flagImage.alt = langName + " Flag";
+        languageName.textContent = langName;
 
-  console.log("Selected language: " + langCode);
-  toggleLanguageOptions();
-}
+        console.log("Selected language: " + langCode);
+        toggleLanguageOptions();
+      }
 
-function onHamburgerClick() {
-  console.log("Clicked hamburger");
-}
+      function onHamburgerClick() {
+        console.log("Clicked hamburger");
+      }
 
-function print() {
-  var printContents = document.querySelector(".printable").innerHTML;
-  var originalContents = document.body.innerHTML;
+      function print() {
+        var printContents = document.querySelector(".printable").innerHTML;
+        var originalContents = document.body.innerHTML;
 
-  document.body.innerHTML = printContents;
-  window.print();
+        document.body.innerHTML = printContents;
+        window.print();
 
-  document.body.innerHTML = originalContents;
-}
-function openModal() {
-  var modal = document.getElementById("myModal");
-  var form = document.getElementById("addUserForm");
-  form.elements["productService"].value = "";
-  form.elements["inPrice"].value = "";
-  form.elements["price"].value = "";
-  form.elements["unit"].value = "";
-  form.elements["inStock"].value = "";
-  form.elements["description"].value = "";
-  document.getElementById("modalTitle").innerText = "Add Product";
-  modal.style.display = "flex";
-}
+        document.body.innerHTML = originalContents;
+      }
+      function openModal() {
+        var modal = document.getElementById("myModal");
+        var form = document.getElementById("addUserForm");
+        form.elements["productService"].value = "";
+        form.elements["inPrice"].value = "";
+        form.elements["price"].value = "";
+        form.elements["unit"].value = "";
+        form.elements["inStock"].value = "";
+        form.elements["description"].value = "";
+        document.getElementById("modalTitle").innerText = "Add Product";
+        modal.style.display = "flex";
+      }
 
-function closeModal() {
-  var modal = document.getElementById("myModal");
-  modal.style.display = "none";
-}
+      function closeModal() {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "none";
+      }
 
+      function saveProduct() {
+        var form = document.getElementById("addUserForm");
+        var articleNo = form.elements["articleNo"].value;
+        var productService = form.elements["productService"].value;
+        var inPrice = form.elements["inPrice"].value;
+        var price = form.elements["price"].value;
+        var unit = form.elements["unit"].value;
+        var inStock = form.elements["inStock"].value;
+        var description = form.elements["description"].value;
 
+        // Validate form fields if needed
 
-function saveProduct() {
-  var form = document.getElementById("addUserForm");
-  var articleNo = form.elements["articleNo"].value;
-  var productService = form.elements["productService"].value;
-  var inPrice = form.elements["inPrice"].value;
-  var price = form.elements["price"].value;
-  var unit = form.elements["unit"].value;
-  var inStock = form.elements["inStock"].value;
-  var description = form.elements["description"].value;
+        if (articleNo) {
+          // Update existing user
+          var row = document.querySelector(
+            '[data-user-id="' + articleNo + '"]'
+          );
+          row.children[1].innerText = productService;
+          row.children[2].innerText = inPrice;
+          row.children[3].innerText = price;
+          row.children[4].innerText = unit;
+          row.children[5].innerText = inStock;
+          row.children[6].innerText = description;
+        } else {
+          // Add new user
+          var newId = new Date().getTime().toString().slice(-6);
+          var tableBody = document.getElementById("tableBody");
+          var newRow = document.createElement("tr");
+          newRow.innerHTML =
+            "<td>" +
+            "<h6 class='table-data-cell'>" +
+            newId +
+            "</h6>" +
+            "</td>" +
+            "<td>" +
+            "<h6 class='table-data-cell'>" +
+            productService +
+            "</h6>" +
+            "</td>" +
+            "<td>" +
+            "<h6 class='table-data-cell'>" +
+            inPrice +
+            "</h6>" +
+            "</td>" +
+            "<td>" +
+            "<h6 class='table-data-cell'>" +
+            price +
+            "</h6>" +
+            "</td>" +
+            "<td>" +
+            "<h6 class='table-data-cell'>" +
+            unit +
+            "</h6>" +
+            "</td>" +
+            "<td>" +
+            "<h6 class='table-data-cell'>" +
+            inStock +
+            "</h6>" +
+            "</td>" +
+            "<td>" +
+            "<h6 class='table-data-cell'>" +
+            description +
+            "</h6>" +
+            "</td>";
 
-  // Validate form fields if needed
+          newRow.dataset.userId = newId; // Set user ID as a data attribute
+          tableBody.appendChild(newRow);
+        }
 
-  if (articleNo) {
-    // Update existing user
-    var row = document.querySelector('[data-user-id="' + articleNo + '"]');
-    row.children[1].innerText = productService;
-    row.children[2].innerText = inPrice;
-    row.children[3].innerText = price;
-    row.children[4].innerText = unit;
-    row.children[5].innerText = inStock;
-    row.children[6].innerText = description;
-  } else {
-    // Add new user
-    var newId = new Date().getTime().toString().slice(-6);
-    var tableBody = document.getElementById("tableBody");
-    var newRow = document.createElement("tr");
-    newRow.innerHTML =
-    "<td>" + 
-      "<h6 class='table-data-cell'>" +
-      newId +
-      "</h6>" +
-    "</td>" +
-    "<td>" +
-      "<h6 class='table-data-cell'>" +
-      productService +
-      "</h6>" +
-    "</td>" +
-    "<td>" +
-      "<h6 class='table-data-cell'>" +
-      inPrice +
-      "</h6>" +
-    "</td>" +
-    "<td>" +
-      "<h6 class='table-data-cell'>" +
-      price +
-      "</h6>" +
-    "</td>" +
-    "<td>" +
-      "<h6 class='table-data-cell'>" +
-      unit +
-      "</h6>" +
-    "</td>" +
-    "<td>" +
-      "<h6 class='table-data-cell'>" +
-      inStock +
-      "</h6>" +
-    "</td>" +
-    "<td>" +
-      "<h6 class='table-data-cell'>" +
-      description +
-      "</h6>" +
-    "</td>";
-
-    newRow.dataset.userId = newId; // Set user ID as a data attribute
-    tableBody.appendChild(newRow);
-  }
-
-  // Close the modal
-  closeModal();
-}
-
+        // Close the modal
+        closeModal();
+      }
     </script>
   </body>
 </html>
