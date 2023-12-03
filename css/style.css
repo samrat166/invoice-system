@@ -1,0 +1,128 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f6f8;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  display: flex;
+}
+
+.menu {
+  width: 220px;
+  background-color: #c47575;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.navbar {
+  background-color: #007bff;
+  height: 70px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pointer {
+  cursor: pointer;
+}
+/* Font Sizes */
+.text-xs {
+  font-size: 12px;
+}
+
+.text-sm {
+  font-size: 14px;
+}
+
+.text-base {
+  font-size: 16px;
+}
+
+.text-lg {
+  font-size: 18px;
+}
+
+.text-xl {
+  font-size: 20px;
+}
+
+.text-2xl {
+  font-size: 24px;
+}
+
+.text-3xl {
+  font-size: 30px;
+}
+
+.text-4xl {
+  font-size: 36px;
+}
+
+.text-5xl {
+  font-size: 48px;
+}
+
+.text-6xl {
+  font-size: 64px;
+}
+
+/* Style for the language selector */
+.custom-select {
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+}
+
+.custom-select select {
+  display: none; /* Hide the original dropdown */
+}
+
+/* Style for the selected language display */
+.selected-language {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+/* Style for the flags */
+.flag {
+  margin-right: 5px;
+  max-width: 24px; /* Adjust the size as needed */
+  max-height: 16px;
+}
+
+/* Style for the dropdown menu */
+.language-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  display: none;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+  background-color: #fff;
+}
+
+.language-options a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+.language-options a:hover {
+  background-color: #f0f0f0;
+}
