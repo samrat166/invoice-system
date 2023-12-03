@@ -30,8 +30,8 @@ main {
   align-items: center;
 }
 
-.menu-title{
-  border-bottom:2px solid #007bff;
+.menu-title {
+  border-bottom: 2px solid #007bff;
   color: rgb(101, 100, 100);
 }
 
@@ -45,7 +45,7 @@ main {
 }
 
 .link-with-icon i {
-  margin-right: 15px; 
+  margin-right: 15px;
   margin-bottom: 3px;
 }
 
@@ -143,4 +143,40 @@ main {
 
 .language-options a:hover {
   background-color: #f0f0f0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+td {
+  padding: 8px;
+  text-align: left;
+}
+
+/* Tablet View */
+@media (max-width: 768px) {
+  th:nth-child(3),
+  td:nth-child(3),
+  th:nth-child(7),
+  td:nth-child(7) {
+    display: none;
+  }
+}
+
+/* Mobile View */
+@media (max-width: 480px) {
+  th,
+  td {
+    display: none;
+  }
+
+  th:nth-child(2),
+  td:nth-child(2),
+  th:nth-child(3),
+  td:nth-child(3) {
+    display: table-cell;
+  }
 }

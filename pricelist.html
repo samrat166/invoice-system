@@ -127,13 +127,89 @@
         </div>
       </div>
       <div class="ms-2 px-4 py-2 flex-grow-1 bg-white">
-        <div>
-          <!-- This is Price list page -->
-          <div class="d-flex justify-content-between">
-            <h2>asd</h2>
-            <h2>asd</h2>
+        <!-- This is Price list page -->
+        <div class="row mt-2">
+          <div class="col-sm-12 col-md-12 col-lg-6">
+            <!-- Search fields -->
+            <div class="position-relative">
+              <input
+                class="rounded border w-100 text-sm py-1"
+                type="text"
+                placeholder="Search Article no..."
+              />
+              <i
+                class="position-absolute text-primary end-0 me-2 mb-1 mt-1 pointer"
+              >
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </i>
+            </div>
+            <div class="position-relative mt-2">
+              <input
+                class="rounded border w-100 text-sm py-1"
+                type="text"
+                placeholder="Search Product..."
+              />
+              <i
+                class="position-absolute text-primary end-0 me-2 mb-1 mt-1 pointer"
+              >
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </i>
+            </div>
           </div>
+          <div
+            class="col-sm-12 col-md-12 col-lg-6 mt-md-2 mt-sm-2 mb-lg-3 d-flex justify-content-end align-items-center"
+          >
+            <button
+              type="button"
+              class="btn btn-outline-primary px-2 py-1 m-1 text-sm"
+              title="Click to add new item"
+            >
+              <span class="d-none d-md-inline-block">New Product</span>
+              <i class="fa-solid fa-circle-plus text-success"></i>
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-primary px-2 py-1 m-1 text-sm"
+              title="Click to print the Price list"
+            >
+              <span class="d-none d-md-inline-block">Print List</span>
+              <i class="fa-solid fa-print"></i>
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-primary px-2 py-1 m-1 text-sm"
+              title="Click for advanced mode"
+            >
+              <span class="d-none d-md-inline-block">Advanced mode</span>
+              <i class="fa-solid fa-toggle-on"></i>
+            </button>
+          </div>
+        </div>
 
+        <div class="mt-4">
+          <table>
+            <thead class="text-sm">
+              <tr>
+                <td>Article No</td>
+                <td>Product/Service</td>
+                <td>In Price</td>
+                <td>Price</td>
+                <td>Unit</td>
+                <td>In Stock</td>
+                <td>Description</td>
+              </tr>
+            </thead>
+            <tbody class="text-xs">
+              <tr>
+                <td>1</td>
+                <td>Product A</td>
+                <td>$20.00</td>
+                <td>Yes</td>
+                <td>Each</td>
+                <td>Other Data 1</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </main>
