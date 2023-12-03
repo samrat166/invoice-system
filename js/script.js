@@ -47,21 +47,9 @@ function closeModal() {
   modal.style.display = "none";
 }
 
-function editUser(event) {
-  var modal = document.getElementById("myModal");
-  var form = document.getElementById("addUserForm");
-  var target = event.target;
 
-  if (target.tagName === "TD") {
-    form.elements["userId"].value = target.parentElement.dataset.userId;
-    form.elements["name"].value = target.parentElement.children[1].innerText;
-    form.elements["email"].value = target.parentElement.children[2].innerText;
-    document.getElementById("modalTitle").innerText = "Edit User";
-    modal.style.display = "flex";
-  }
-}
 
-function saveUser() {
+function saveProduct() {
   var form = document.getElementById("addUserForm");
   var articleNo = form.elements["articleNo"].value;
   var productService = form.elements["productService"].value;
@@ -84,7 +72,7 @@ function saveUser() {
     row.children[6].innerText = description;
   } else {
     // Add new user
-    var newId = new Date().getTime();
+    var newId = new Date().getTime().toString().slice(-6);
     var tableBody = document.getElementById("tableBody");
     var newRow = document.createElement("tr");
     newRow.innerHTML =
