@@ -15,6 +15,11 @@
       src="https://kit.fontawesome.com/c78576d7c3.js"
       crossorigin="anonymous"
     ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body>
@@ -163,8 +168,7 @@
               type="button"
               class="btn btn-outline-primary px-2 py-1 m-1 text-sm"
               title="Click to add new item"
-              data-bs-toggle="modal"
-              data-bs-target="#staticBackdrop"
+              onclick="openModal()"
             >
               <span class="d-none d-md-inline-block">New Product</span>
               <i class="fa-solid fa-circle-plus text-success"></i>
@@ -190,7 +194,7 @@
         </div>
 
         <div class="mt-4 printable">
-          <table>
+          <table id="userTable">
             <thead class="text-sm">
               <tr>
                 <td>Article No</td>
@@ -202,7 +206,7 @@
                 <td>Description</td>
               </tr>
             </thead>
-            <tbody class="text-xs">
+            <tbody class="text-xs" id="tableBody">
               <tr>
                 <td>
                   <h6 class="table-data-cell">123123</h6>
@@ -213,11 +217,11 @@
                   </h6>
                 </td>
                 <td>
-                  <h6 class="table-data-cell">$200.0</h6>
+                  <h6 class="table-data-cell">200</h6>
                 </td>
-                <td><h6 class="table-data-cell">$200.0</h6></td>
-                <td><h6 class="table-data-cell">$200.0</h6></td>
-                <td><h6 class="table-data-cell">$200.0</h6></td>
+                <td><h6 class="table-data-cell">200</h6></td>
+                <td><h6 class="table-data-cell">200</h6></td>
+                <td><h6 class="table-data-cell">1200</h6></td>
                 <td>
                   <h6 class="table-data-cell">
                     Desc of the follwing this type of all the event is the
@@ -229,57 +233,91 @@
         </div>
       </div>
     </main>
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="staticBackdropLabel">Add New Product</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <h2><span id="modalTitle">Add User</span></h2>
+        <form id="addUserForm" class="attractive-form">
+          <input type="hidden" id="articleNo" name="articleNo" />
+          <div class="mb-3">
+            <label for="productService" class="form-label"
+              >Product/Service</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="productService"
+              name="productService"
+              placeholder="Enter product or service"
+            />
           </div>
-          <div class="modal-body">
-            <form>
-              <div class="mb-3">
-                <label for="articleNo" class="form-label">Article No</label>
-                <input type="text" class="form-control" id="articleNo" name="articleNo">
-              </div>
-              <div class="mb-3">
-                <label for="productName" class="form-label">Product/Service</label>
-                <input type="text" class="form-control" id="productName" name="productName">
-              </div>
-              <div class="mb-3">
-                <label for="inPrice" class="form-label">In Price</label>
-                <input type="number" class="form-control" id="inPrice" name="inPrice">
-              </div>
-              <div class="mb-3">
-                <label for="price" class="form-label">Price</label>
-                <input type="number" class="form-control" id="price" name="price">
-              </div>
-              <div class="mb-3">
-                <label for="unit" class="form-label">Unit</label>
-                <input type="number" class="form-control" id="unit" name="unit">
-              </div>
-              <div class="mb-3">
-                <label for="inStock" class="form-label">In Stock</label>
-                <input type="number" class="form-control" id="inStock" name="inStock">
-              </div>
-              <div class="mb-3">
-                <label for="description" class="form-label">Description</label>
-                <textarea class="form-control" id="description" name="description"></textarea>
-              </div>
-            </form>
+          <div class="mb-3">
+            <label for="inPrice" class="form-label">In Price</label>
+            <input
+              type="number"
+              class="form-control"
+              id="inPrice"
+              name="inPrice"
+              placeholder="Enter in price"
+            />
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-success">Add</button>
+          <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input
+              type="number"
+              class="form-control"
+              id="price"
+              name="price"
+              placeholder="Enter price"
+            />
           </div>
-        </div>
+          <div class="mb-3">
+            <label for="unit" class="form-label">Unit</label>
+            <input
+              type="number"
+              class="form-control"
+              id="unit"
+              name="unit"
+              placeholder="Enter unit"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="inStock" class="form-label">In Stock</label>
+            <input
+              type="number"
+              class="form-control"
+              id="inStock"
+              name="inStock"
+              placeholder="Enter stock quantity"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <input
+              type="text"
+              class="form-control"
+              id="description"
+              name="description"
+              placeholder="Enter description"
+            />
+          </div>
+          <div class="d-flex justify-content-end">
+            <button
+              type="button"
+              class="btn btn-danger px-2 py-1"
+              onclick="closeModal()"
+            >
+              Cancel
+            </button>
+            <button
+              type="button"
+              class="btn btn-success px-2 py-1 ms-2"
+              onclick="saveUser()"
+            >
+              Save
+            </button>
+          </div>
+        </form>
       </div>
     </div>
-    
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-      crossorigin="anonymous"
-    ></script>
   </body>
 </html>
